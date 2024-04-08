@@ -1,6 +1,11 @@
-// src/main.js
-import { version } from "../package.json";
+import _ from "lodash";
 
-export default function () {
-  console.log("version " + version);
+function component() {
+  const element = document.createElement("div");
+
+  element.innerHTML = _.join(["Hello", "Rollup"], " ");
+
+  return element;
 }
+
+document.body.appendChild(component());
