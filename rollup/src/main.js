@@ -1,4 +1,6 @@
-import foo from "./foo";
+// src/main.js
+import { version } from "../package.json";
+
 export default function () {
-  console.log(foo);
+  console.log("version " + version);
 }
