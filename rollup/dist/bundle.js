@@ -17216,7 +17216,6 @@
 	  const element = document.createElement("div");
 
 	  element.innerHTML = _.join(["Hello", "Rollup"], " ");
-	  element.classList.add("hello");
 
 	  return element;
 	}
