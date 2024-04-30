@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild src/index.js --bundle --outfile=dist/bundle.js"
+    "build": "esbuild src/main.js --bundle --outfile=dist/bundle.js",
+    "meta": "esbuild src/main.js --bundle --metafile=dist/meta.json --outfile=dist/meta.js"
   },
   "keywords": [],
   "author": "",

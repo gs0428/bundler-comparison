@@ -1,0 +1,36 @@
+{
+  "inputs": {
+    "src/math.js": {
+      "bytes": 266,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/main.js": {
+      "bytes": 104,
+      "imports": [
+        {
+          "path": "src/math.js",
+          "kind": "import-statement",
+          "original": "./math"
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "dist/meta.js": {
+      "imports": [],
+      "exports": [],
+      "entryPoint": "src/main.js",
+      "inputs": {
+        "src/math.js": {
+          "bytesInOutput": 95
+        },
+        "src/main.js": {
+          "bytesInOutput": 57
+        }
+      },
+      "bytes": 202
+    }
+  }
+}
