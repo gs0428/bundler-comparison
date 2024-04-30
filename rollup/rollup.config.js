@@ -1,37 +1,13 @@
 import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import babel from "@rollup/plugin-babel";
-import serve from "rollup-plugin-serve";
-import livereload from "rollup-plugin-livereload";
-import replace from "@rollup/plugin-replace";
+import terser from "@rollup/plugin-terser";
+import { visualizer } from "rollup-plugin-visualizer";
 
 export default {
-  input: "./src/index.jsx",
+  input: "src/main.js",
   output: {
-    file: "./dist/bundle.js",
-    format: "iife",
+    file: "dist/bundle.js",
+    format: "esm", // ES 모듈 포맷을 사용하여 트리 쉐이킹을 최대화
+    plugins: [terser()], // 코드 압축
   },
-  plugins: [
-    resolve(),
-    commonjs(),
-    babel({
-      exclude: "node_modules/**",
-      presets: ["@babel/preset-env"],
-    }),
-    ...(process.env.ROLLUP_WATCH
-      ? [
-          serve({
-            open: true, // 브라우저에서 바로 열기
-            contentBase: ["dist"], // 정적 파일 제공 디렉토리
-            host: "localhost",
-            port: 10001,
-          }),
-          livereload("dist"), // livereload 대상 디렉토리
-        ]
-      : []),
-    replace({
-      "process.env.NODE_ENV": JSON.stringify("production"),
-      preventAssignment: true,
-    }),
-  ],
+  plugins: [resolve(), visualizer()],
 };
