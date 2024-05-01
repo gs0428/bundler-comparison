@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "esbuild src/main.js --bundle --outfile=dist/bundle.js",
-    "meta": "esbuild src/main.js --bundle --metafile=dist/meta.json --outfile=dist/meta.js"
+    "visualize": "esbuild src/main.js --bundle --metafile=dist/meta.json --outfile=dist/meta.js"
   },
   "keywords": [],
   "author": "",
